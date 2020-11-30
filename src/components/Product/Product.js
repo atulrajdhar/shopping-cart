@@ -1,50 +1,30 @@
 import React from 'react';
-
-import { useStateValue } from '../StateProvider';
-
 import './Product.css';
 
-function Product({ id, title, image, price, rating}) {
-
-    const [{}, dispatch] = useStateValue();
-    
-    const addToBasket = () => {
-        //console.log("addToBasket")
-        // add item to basket
-        dispatch({
-            type: 'ADD_TO_BASKET',
-            item: {
-                id: id,
-                title: title,
-                image: image,
-                price: price,
-                rating: rating,
-            },
-        });
-    };
+function Product({ id, name, title, image, description, price }) {
 
     return (
         <div className="product">
-            <div className="product__info">
-                <p>{title}</p>
-                <p className="product__price">
+            <div className="product-card">
+                <h2 className="name">{name}</h2>
+                <span className="price">
                     <small>&#8377;</small>
-                    <strong>{price}</strong>
-                </p>
-                <div className="product__rating">
-                    {
-                        Array(rating)
-                        .fill()
-                        .map((_) => 
-                                <p>&#9733;</p>
-                            )
-                    }
-                </div>
+                    {price}
+                </span>
+                <a className="popup-btn">Quick View</a>
+                <img src={image} className="product-img" alt="" />
             </div>
-            <img src={image} alt="" />
-            <button onClick={addToBasket}>Add to basket</button>
-        </div>
-    )
+            <div className="popup-view">
+                <PopupCard 
+                    id={id}
+                    name={name}
+                    title={title}
+                    image={image}
+                    description={description}
+                    price={price} />
+            </div>
+      </div>            
+    );
 }
 
 export default Product;
