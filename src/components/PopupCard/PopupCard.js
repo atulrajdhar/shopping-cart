@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useStateValue } from '../StateProvider';
+import { useStateValue } from '../helpers/StateProvider';
 
 function PopupCard({ id, name, title, image, description, price }) {
 

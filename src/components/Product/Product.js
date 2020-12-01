@@ -23,7 +23,7 @@ function Product({ id, name, title, image, description, price }) {
                     description={description}
                     price={price} />
             </div>
-      </div>            
+      </div>
     );
 }
 

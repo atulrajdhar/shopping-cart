@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // import { auth } from 'auth-server';
 
-import { useStateValue } from './components/StateProvider';
+import { useStateValue } from './helpers/StateProvider';
 
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
