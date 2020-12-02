@@ -1,27 +1,24 @@
 import React from 'react';
+
+import PopupCard from '../PopupCard/PopupCard';
+
 import './Product.css';
 
-function Product({ id, name, title, image, description, price }) {
+function Product({ product }) {
 
     return (
         <div className="product">
             <div className="product-card">
-                <h2 className="name">{name}</h2>
+                <h2 className="name">{product.name}</h2>
                 <span className="price">
                     <small>&#8377;</small>
-                    {price}
+                    {product.price}
                 </span>
                 <a className="popup-btn">Quick View</a>
-                <img src={image} className="product-img" alt="" />
+                <img src={product.image} className="product-img" alt="" />
             </div>
             <div className="popup-view">
-                <PopupCard 
-                    id={id}
-                    name={name}
-                    title={title}
-                    image={image}
-                    description={description}
-                    price={price} />
+                <PopupCard product={product} />
             </div>
       </div>
     );
